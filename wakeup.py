@@ -10,7 +10,7 @@ END_BRIGHT   = -45  # Minutes after alarm to turn off
 MAX_BRIGHT   = 255  # Max brightness 1 - 255
 
 # Other constants
-BRIGHT_MULTI = 255 / START_BRIGHT
+BRIGHT_MULTI = MAX_BRIGHT / START_BRIGHT
 SLEEP_TIME   = 10
 
 import os
@@ -92,9 +92,9 @@ def checkTime():
 
 				percDiff = (minuteDiff / START_BRIGHT) * 100
 
-				if percDiff > 50:
+				if percDiff > 5:
 					bright = bright * 0.2
-				elif percDiff > 5:
+				elif percDiff > 1:
 					bright = bright * 0.5
 
 		else:
